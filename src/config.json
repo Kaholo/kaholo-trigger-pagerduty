@@ -1,0 +1,23 @@
+{
+  "name": "PagerDuty-Trigger",
+  "type": "trigger",
+  "execProgram": "node",
+  "main": "app.js",
+  "imgUrl": "pd.png",
+  "version": "1.0.0",
+  "description": "PagerDuty Trigger",
+  "methods": [
+    {
+      "name": "INCIDENT_WEBHOOK",
+      "route": "post /webhook/pagerduty/incident",
+      "viewName": "Find user on call",
+      "params": [
+        {
+          "name": "EVENT",
+          "viewName": "Event",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

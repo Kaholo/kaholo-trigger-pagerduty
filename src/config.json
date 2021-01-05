@@ -10,12 +10,46 @@
     {
       "name": "INCIDENT_WEBHOOK",
       "route": "post /webhook/pagerduty/incident",
-      "viewName": "Find user on call",
+      "viewName": "PageDuty Event",
       "params": [
         {
           "name": "EVENT",
           "viewName": "Event",
-          "type": "string"
+          "type": "options",
+          "options" : [
+            {
+              "id":"incident.trigger",
+              "name":"incident.trigger"
+            },
+            {
+              "id":"incident.acknowledge",
+              "name":"incident.acknowledge"
+            },
+            {
+              "id":"incident.unacknowledge",
+              "name":"incident.unacknowledge"
+            },
+            {
+              "id":"incident.resolve",
+              "name":"incident.resolve"
+            },
+            {
+              "id":"incident.assign",
+              "name":"incident.assign"
+            },
+            {
+              "id":"incident.escalate",
+              "name":"incident.escalate"
+            },
+            {
+              "id":"incident.delegate",
+              "name":"incident.delegate"
+            },
+            {
+              "id":"incident.annotate",
+              "name":"incident.annotate"
+            }
+          ]
         }
       ]
     }

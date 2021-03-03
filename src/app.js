@@ -1,35 +1,44 @@
-const config = require("./config");
-const mapExecutionService = require("../../../api/services/map-execution.service");
-const Trigger = require("../../../api/models/map-trigger.model");
+const { findTriggers } = require('./helpers')
 
 function alertWebhook(req,res) {
-    let body = req.body
-    Trigger.find({ plugin: config.name }).then((triggers) => {
-        console.log(`Found ${triggers.length} triggers`);
-        res.send('OK');
-        triggers.forEach(trigger=>execTrigger(trigger,body,req.io))
-    }).catch((error) => res.send(error))
+    const messages = req.body.messages;
+
+    messages.forEach(eventBody => {
+        const eventType = eventBody.event; // Get event type
+        const eventTitle = eventBody.incident.title; // Get event title
+        const urgency = eventBody.incident.urgency; // Get event severity 
+        if (!eventType || !eventTitle || !urgency){
+            throw "bad pagerduty alert format";
+        }
+
+        findTriggers(
+            validateTrigger, { eventType, urgency },
+            res, 
+            "INCIDENT_WEBHOOK",
+            `${eventTitle}-${urgency} urgency`, // event description for kaholo
+            eventBody, 
+            req.io
+        );
+    });
+    res.send("OK");
 }
 
-function execTrigger (trigger, body,io) {
-    new Promise ((resolve,reject) => {
-        const messages = body.messages;
-        for (x in messages) {
-            const triggerEvent = trigger.params.find(o => o.name === 'EVENT');
-            if (messages[x].event != triggerEvent.value) {
-                console.log(alertID, triggerState.value)
-                return reject("Not matching alert ID")
-            } else {
-                return resolve()
-            }
-        }
-    }).then(() => {
-        console.log(trigger.map);
-        let message = trigger.name + ' started by Dynatrace trigger'
-        mapExecutionService.execute(trigger.map,null,io,{config: trigger.configuration},message,body);
-    }).catch(err=>{
-        console.error(err);
-    })
+async function validateTrigger(trigger, { eventType, urgency }) {
+    const triggerEventType = trigger.params.find((o) => o.name === "EVENT").value || "any";
+    const triggerUrgency = trigger.params.find((o) => o.name === "urgency").value || "any";
+    /**
+     * if event type was provided check it matches event type in post request
+     */
+    if (triggerEventType !== "any" && eventType !== triggerEventType) {
+      throw "Not same event type";
+    }
+    /**
+     * if urgency was provided check it matches urgency in post request
+     */
+    if (triggerUrgency !== "any" && urgency !== triggerUrgency){
+      throw "Not same event urgency";
+    }
+    return true;
 }
 module.exports = {
     INCIDENT_WEBHOOK: alertWebhook

@@ -10,44 +10,67 @@
     {
       "name": "INCIDENT_WEBHOOK",
       "route": "post /webhook/pagerduty/incident",
-      "viewName": "PageDuty Event",
+      "viewName": "PagerDuty Event",
       "params": [
         {
           "name": "EVENT",
-          "viewName": "Event",
+          "viewName": "Event Type",
           "type": "options",
           "options" : [
             {
+              "id":"any",
+              "name":"Any"
+            },
+            {
               "id":"incident.trigger",
-              "name":"incident.trigger"
+              "name":"Trigger"
             },
             {
               "id":"incident.acknowledge",
-              "name":"incident.acknowledge"
+              "name":"Acknowledge"
             },
             {
               "id":"incident.unacknowledge",
-              "name":"incident.unacknowledge"
+              "name":"Unacknowledge"
             },
             {
               "id":"incident.resolve",
-              "name":"incident.resolve"
+              "name":"Resolve"
             },
             {
               "id":"incident.assign",
-              "name":"incident.assign"
+              "name":"Assign"
             },
             {
               "id":"incident.escalate",
-              "name":"incident.escalate"
+              "name":"Escalate"
             },
             {
               "id":"incident.delegate",
-              "name":"incident.delegate"
+              "name":"Delegate"
             },
             {
               "id":"incident.annotate",
-              "name":"incident.annotate"
+              "name":"Annotate"
+            }
+          ]
+        },
+        {
+          "name": "urgency",
+          "viewName": "Incident Urgency",
+          "type": "options",
+          "options" : [
+            {
+              "id":"any",
+              "name":"Any"
+            },
+            {
+              "id":"high",
+              "name":"High"
+            },
+            {
+              "id":"low",
+              "name":"Low"
             }
           ]
         }

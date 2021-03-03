@@ -1,6 +1,7 @@
 # kaholo-trigger-pagerduty
 Kaholo Trigger for pager duty
 
+<<<<<<< HEAD
 ## Method
 Invoke kaholo on incident event
 
@@ -14,3 +15,11 @@ Invoke kaholo on incident event
   - incident.escalate
   - incident.delegate
   - incident.annotate
+=======
+This trigger exposes POST route:  ```<KAHOLO_URL>/webhook/pagerduty/incident```
+
+### Parameters:
+1. Event: The event is filtered by: ```incident.trigger``` or ```incident.resolve```
+view here for more [incident types](https://developer.pagerduty.com/docs/webhooks/v2-overview/)
+
+>>>>>>> origin/main

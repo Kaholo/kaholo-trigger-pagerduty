@@ -1,0 +1,80 @@
+{
+  "name": "PagerDuty-Trigger",
+  "type": "trigger",
+  "execProgram": "node",
+  "main": "app.js",
+  "imgUrl": "pd.png",
+  "version": "1.0.0",
+  "description": "PagerDuty Trigger",
+  "methods": [
+    {
+      "name": "INCIDENT_WEBHOOK",
+      "route": "post /webhook/pagerduty/incident",
+      "viewName": "PagerDuty Event",
+      "params": [
+        {
+          "name": "EVENT",
+          "viewName": "Event Type",
+          "type": "options",
+          "options" : [
+            {
+              "id":"any",
+              "name":"Any"
+            },
+            {
+              "id":"incident.trigger",
+              "name":"Trigger"
+            },
+            {
+              "id":"incident.acknowledge",
+              "name":"Acknowledge"
+            },
+            {
+              "id":"incident.unacknowledge",
+              "name":"Unacknowledge"
+            },
+            {
+              "id":"incident.resolve",
+              "name":"Resolve"
+            },
+            {
+              "id":"incident.assign",
+              "name":"Assign"
+            },
+            {
+              "id":"incident.escalate",
+              "name":"Escalate"
+            },
+            {
+              "id":"incident.delegate",
+              "name":"Delegate"
+            },
+            {
+              "id":"incident.annotate",
+              "name":"Annotate"
+            }
+          ]
+        },
+        {
+          "name": "urgency",
+          "viewName": "Incident Urgency",
+          "type": "options",
+          "options" : [
+            {
+              "id":"any",
+              "name":"Any"
+            },
+            {
+              "id":"high",
+              "name":"High"
+            },
+            {
+              "id":"low",
+              "name":"Low"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

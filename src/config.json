@@ -4,7 +4,7 @@
   "execProgram": "node",
   "main": "app.js",
   "imgUrl": "pd.png",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PagerDuty Trigger",
   "methods": [
     {

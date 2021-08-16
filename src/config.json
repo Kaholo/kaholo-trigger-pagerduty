@@ -4,7 +4,7 @@
   "execProgram": "node",
   "main": "app.js",
   "imgUrl": "pd.png",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "PagerDuty Trigger",
   "methods": [
     {
@@ -22,36 +22,56 @@
               "name":"Any"
             },
             {
-              "id":"incident.trigger",
-              "name":"Trigger"
+              "id":"incident.triggered",
+              "name":"Triggered"
             },
             {
-              "id":"incident.acknowledge",
-              "name":"Acknowledge"
+              "id":"incident.acknowledged",
+              "name":"Acknowledged"
             },
             {
-              "id":"incident.unacknowledge",
-              "name":"Unacknowledge"
+              "id":"incident.unacknowledged",
+              "name":"Unacknowledged"
             },
             {
-              "id":"incident.resolve",
-              "name":"Resolve"
+              "id":"incident.resolved",
+              "name":"Resolved"
             },
             {
-              "id":"incident.assign",
-              "name":"Assign"
+              "id":"incident.escalated",
+              "name":"Escalated"
             },
             {
-              "id":"incident.escalate",
-              "name":"Escalate"
+              "id":"incident.delegated",
+              "name":"Delegated"
             },
             {
-              "id":"incident.delegate",
-              "name":"Delegate"
+              "id":"incident.annotated",
+              "name":"Annotated(Note Added)"
             },
             {
-              "id":"incident.annotate",
-              "name":"Annotate"
+              "id":"incident.priority_updated",
+              "name":"Priority Updated"
+            },
+            {
+              "id":"incident.reassigned",
+              "name":"Reassigned"
+            },
+            {
+              "id":"incident.reopened",
+              "name":"Reopened"
+            },
+            {
+              "id":"incident.responder.added",
+              "name":"Reopened Added"
+            },
+            {
+              "id":"incident.responder.replied",
+              "name":"Responder Replied"
+            },
+            {
+              "id":"incident.status_update_published",
+              "name":"Status Update"
             }
           ]
         },

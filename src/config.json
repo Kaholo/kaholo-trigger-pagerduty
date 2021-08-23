@@ -4,7 +4,7 @@
   "execProgram": "node",
   "main": "app.js",
   "imgUrl": "pd.png",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "PagerDuty Trigger",
   "methods": [
     {
@@ -22,56 +22,32 @@
               "name":"Any"
             },
             {
-              "id":"incident.triggered",
+              "id":"incident.trigger",
               "name":"Triggered"
             },
             {
-              "id":"incident.acknowledged",
+              "id":"incident.acknowledge",
               "name":"Acknowledged"
             },
             {
-              "id":"incident.unacknowledged",
+              "id":"incident.unacknowledge",
               "name":"Unacknowledged"
             },
             {
-              "id":"incident.resolved",
+              "id":"incident.resolve",
               "name":"Resolved"
             },
             {
-              "id":"incident.escalated",
+              "id":"incident.escalate",
               "name":"Escalated"
             },
             {
-              "id":"incident.delegated",
+              "id":"incident.delegate",
               "name":"Delegated"
             },
             {
-              "id":"incident.annotated",
+              "id":"incident.annotate",
               "name":"Annotated(Note Added)"
-            },
-            {
-              "id":"incident.priority_updated",
-              "name":"Priority Updated"
-            },
-            {
-              "id":"incident.reassigned",
-              "name":"Reassigned"
-            },
-            {
-              "id":"incident.reopened",
-              "name":"Reopened"
-            },
-            {
-              "id":"incident.responder.added",
-              "name":"Reopened Added"
-            },
-            {
-              "id":"incident.responder.replied",
-              "name":"Responder Replied"
-            },
-            {
-              "id":"incident.status_update_published",
-              "name":"Status Update"
             }
           ]
         },

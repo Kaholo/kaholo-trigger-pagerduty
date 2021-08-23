@@ -22,32 +22,68 @@
               "name":"Any"
             },
             {
-              "id":"incident.trigger",
-              "name":"Triggered"
+              "id":"incident.triggered",
+              "name":"Incident Triggered"
             },
             {
-              "id":"incident.acknowledge",
-              "name":"Acknowledged"
+              "id":"incident.acknowledged",
+              "name":"Incident Acknowledged"
             },
             {
-              "id":"incident.unacknowledge",
-              "name":"Unacknowledged"
+              "id":"incident.unacknowledged",
+              "name":"Incident Unacknowledged"
             },
             {
-              "id":"incident.resolve",
-              "name":"Resolved"
+              "id":"incident.resolved",
+              "name":"Incident Resolved"
             },
             {
-              "id":"incident.escalate",
-              "name":"Escalated"
+              "id":"incident.escalated",
+              "name":"Incident Escalated"
             },
             {
-              "id":"incident.delegate",
-              "name":"Delegated"
+              "id":"incident.delegated",
+              "name":"Incident Delegated"
             },
             {
-              "id":"incident.annotate",
-              "name":"Annotated(Note Added)"
+              "id":"incident.annotated",
+              "name":"Incident Annotated(Note Added)"
+            },
+            {
+              "id":"incident.priority_updated",
+              "name":"Incident Priority Updated"
+            },
+            {
+              "id":"incident.reassigned",
+              "name":"Incident Reassigned"
+            },
+            {
+              "id":"incident.reopened",
+              "name":"Incident Reopened"
+            },
+            {
+              "id":"incident.responder.added",
+              "name":"Incident Responder Added"
+            },
+            {
+              "id":"incident.responder.replied",
+              "name":"Incident Responder Replied"
+            },
+            {
+              "id":"incident.status_update_published",
+              "name":"Incident Status Update"
+            },
+            {
+              "id":"service.updated",
+              "name":"Service Updated"
+            },
+            {
+              "id":"service.created",
+              "name":"Service Created"
+            },
+            {
+              "id":"service.deleted",
+              "name":"Service Deleted"
             }
           ]
         },

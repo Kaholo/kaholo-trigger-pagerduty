@@ -4,7 +4,7 @@
   "execProgram": "node",
   "main": "app.js",
   "imgUrl": "pd.png",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "PagerDuty Trigger",
   "methods": [
     {
@@ -23,55 +23,67 @@
             },
             {
               "id":"incident.triggered",
-              "name":"Triggered"
+              "name":"Incident Triggered"
             },
             {
               "id":"incident.acknowledged",
-              "name":"Acknowledged"
+              "name":"Incident Acknowledged"
             },
             {
               "id":"incident.unacknowledged",
-              "name":"Unacknowledged"
+              "name":"Incident Unacknowledged"
             },
             {
               "id":"incident.resolved",
-              "name":"Resolved"
+              "name":"Incident Resolved"
             },
             {
               "id":"incident.escalated",
-              "name":"Escalated"
+              "name":"Incident Escalated"
             },
             {
               "id":"incident.delegated",
-              "name":"Delegated"
+              "name":"Incident Delegated"
             },
             {
               "id":"incident.annotated",
-              "name":"Annotated(Note Added)"
+              "name":"Incident Annotated(Note Added)"
             },
             {
               "id":"incident.priority_updated",
-              "name":"Priority Updated"
+              "name":"Incident Priority Updated"
             },
             {
               "id":"incident.reassigned",
-              "name":"Reassigned"
+              "name":"Incident Reassigned"
             },
             {
               "id":"incident.reopened",
-              "name":"Reopened"
+              "name":"Incident Reopened"
             },
             {
               "id":"incident.responder.added",
-              "name":"Reopened Added"
+              "name":"Incident Responder Added"
             },
             {
               "id":"incident.responder.replied",
-              "name":"Responder Replied"
+              "name":"Incident Responder Replied"
             },
             {
               "id":"incident.status_update_published",
-              "name":"Status Update"
+              "name":"Incident Status Update"
+            },
+            {
+              "id":"service.updated",
+              "name":"Service Updated"
+            },
+            {
+              "id":"service.created",
+              "name":"Service Created"
+            },
+            {
+              "id":"service.deleted",
+              "name":"Service Deleted"
             }
           ]
         },
